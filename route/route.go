@@ -5,7 +5,7 @@ import (
 
 	// "fmt"
 	// "log"
-	"net/http"
+	// "net/http"
 	"github.com/gorilla/mux"
 )
 
@@ -36,9 +36,9 @@ func Resource(Url string) {
 	r.HandleFunc(Url, controller.Index)
 }
 
-func Get(Url string, cont func(w http.ResponseWriter, r *http.Request)){
-	r.HandleFunc(Url, cont).Methods("GET")
-}
+// func Get(Url string, cont func(w http.ResponseWriter, r *http.Request)){
+// 	r.HandleFunc(Url, cont).Methods("GET")
+// }
 
 func Invoker() *mux.Router{
 	 return r
