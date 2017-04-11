@@ -21,7 +21,7 @@ func main() {
 
 	// Routing
 	route.Resource("/test")
-	// route.Get("/welcome", controller.Get)
+	route.Get("/welcome", controller.Get)
 	r := route.Invoker()
 
 	// On service 
