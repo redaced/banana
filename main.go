@@ -7,8 +7,8 @@ import (
 	"github.com/redaced/banana/route"
 
 	// "fmt"
-    "net/http"	
-    "log"
+	"log"
+	"net/http"
 	// "reflect"
 )
 
@@ -23,7 +23,7 @@ func main() {
 	route.Resource("/test")
 	// route.Get("/welcome", controller.Get)
 	r := route.Invoker()
-
-	// On service 
+	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./public/")))
+	// On service
 	log.Fatal(http.ListenAndServe(config.Port, r))
 }

@@ -1,4 +1,5 @@
 package route
+
 import (
 	// "banana/view"
 	"github.com/redaced/banana/controller"
@@ -11,7 +12,7 @@ import (
 
 type Router struct {
 	*mux.Router
-	routes  []*route
+	routes []*route
 	// Options *Options
 }
 
@@ -28,7 +29,8 @@ type route struct {
 }
 
 var r = mux.NewRouter()
-func init(){
+
+func init() {
 	r.HandleFunc("/", controller.Index)
 }
 
@@ -40,6 +42,6 @@ func Resource(Url string) {
 // 	r.HandleFunc(Url, cont).Methods("GET")
 // }
 
-func Invoker() *mux.Router{
-	 return r
+func Invoker() *mux.Router {
+	return r
 }
